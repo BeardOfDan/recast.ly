@@ -15,7 +15,6 @@ class App extends React.Component {
         <div className="row">
           <div className="col-md-7">
             <VideoPlayer video={this.props.videos[0]} />
-            {/* title={this.props.movies[0].snippet.title} description={this.props.movies[0].snippet.description} url={this.props.movies[0].snippet.thumbnails.url} */}
           </div>
           <div className="col-md-5">
             <VideoList videos={this.props.videos} />

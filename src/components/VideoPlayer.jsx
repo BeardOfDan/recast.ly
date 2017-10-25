@@ -8,11 +8,11 @@ class VideoPlayer extends React.Component {
     return (
       <div className="video-player">
         <div className="embed-responsive embed-responsive-16by9">
-          <iframe className="embed-responsive-item" src={this.props.video.snippet.thumbnails.url} allowFullScreen></iframe>
+          <iframe className="embed-responsive-item" src={this.props.video.snippet.thumbnails.default.url} allowFullScreen></iframe>
         </div>
         <div className="video-player-details">
-          <h3>{this.props.video.snippettitle}</h3>
-          <div>{this.props.video.snippetdescription}</div>
+          <h3>{this.props.video.snippet.title}</h3>
+          <div>{this.props.video.snippet.description}</div>
         </div>
       </div>
     );
