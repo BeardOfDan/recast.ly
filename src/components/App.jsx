@@ -2,7 +2,26 @@ class App extends React.Component {
 
   constructor(props) {
     super(props); 
-    this.state = {'data': props.movies, 'current': props.movies[0]};
+    // this.state = {'data': props.movies, 'current': props.movies[0]};
+
+
+    this.state = {'data': exampleVideoData, 'current': exampleVideoData[0]};
+
+
+    const options = {
+      'query': 'Rick and Morty',
+      'max': 5,
+      'key': 'AIzaSyCUadeTik0U1vqtpPuGSeZoJD8uJ0btbLA'
+    };
+
+    const callback = function(data) {
+      this.setState({'data': data, 'current': data[0]});
+      return undefined;
+    }.bind(this);
+
+
+    // use this.props.searchYouTube to set the state
+    // props.getData(options, callback);
   }
 
   clickHandler(arg) {
