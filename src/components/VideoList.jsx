@@ -2,7 +2,7 @@ var VideoList = (props) => {
   const result = [];
 
   for (let i = 0; i < props.videos.length; i++) {
-    result[i] = <VideoListEntry video={props.videos[i]} key={i} />; //assign key prop to prevent warning of having the same key 
+    result[i] = <VideoListEntry video={props.videos[i]} key={i} clickHandler={props.clickHandler} />; //assign key prop to prevent warning of having the same key 
   }
 
   return (<div className="video-list">{result}</div>);  

@@ -5,6 +5,10 @@ class App extends React.Component {
     this.state = {'data': props.movies, 'current': props.movies[0]};
   }
 
+  clickHandler(arg) {
+    this.setState({'current': arg});
+  }
+
   render() {
     return (
       <div>
@@ -18,7 +22,7 @@ class App extends React.Component {
             <VideoPlayer video={this.state.current} />
           </div>
           <div className="col-md-5">
-            <VideoList videos={this.state.data} />
+            <VideoList videos={this.state.data} clickHandler={this.clickHandler.bind(this)} />
           </div>
         </div>
       </div>
