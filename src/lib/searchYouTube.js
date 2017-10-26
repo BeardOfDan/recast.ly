@@ -53,13 +53,12 @@ var searchYouTube = (options, callback) => {
     'data': data,
     'contentType': 'application/json',
     success: function(data) {
-      console.log('good work', data);
       callback(data.items);     
     },
     error: function(data) {
       console.log('oh no', data);
 
-      console.log("\n\n" + data.responseText);
+      console.log('\n\n' + data.responseText + '\n\n');
     }
   });
 
