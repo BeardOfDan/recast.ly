@@ -24,7 +24,7 @@ var searchYouTube = (options, callback) => {
   // GET https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&q=QUERY&type=video&key={YOUR_API_KEY}
 
 
-  const url = '' + baseUrl + limit + '&q=' + query + '&type=video&key=' + 'API_KEY';
+  const url = '' + baseUrl + limit + '&q=' + query + '&type=video&key=' + key;
 
   //. 'https://www.googleapis.com/youtbe/v3/search'
 
@@ -62,10 +62,10 @@ var searchYouTube = (options, callback) => {
     'contentType': 'application/json',
     success: function(data) {
       console.log('good work');
-      callback(data);     
+      callback(data.items);     
     },
     error: function(data) {
-      console.log('oh no', data);
+      console.log('oh no', data, data.responseText);
     }
   });
 
@@ -74,6 +74,6 @@ var searchYouTube = (options, callback) => {
 };
 
 
-ReactDOM.render(<App getData={searchYouTube} />, document.getElementById('app'));
+ReactDOM.render(<App searchYouTube={searchYouTube} />, document.getElementById('app'));
 
 

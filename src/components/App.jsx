@@ -4,9 +4,8 @@ class App extends React.Component {
     super(props); 
     // this.state = {'data': props.movies, 'current': props.movies[0]};
 
-
+    // this is default data so that before the asyn operation (the ajax request) finishes, the components can get sample data
     this.state = {'data': exampleVideoData, 'current': exampleVideoData[0]};
-
 
     const options = {
       'query': 'Rick and Morty',
@@ -15,13 +14,16 @@ class App extends React.Component {
     };
 
     const callback = function(data) {
+      console.log('HERE IS THE DATA', data);
+      console.log('about to set the state...');
       this.setState({'data': data, 'current': data[0]});
-      return undefined;
+      console.log('state', this.state);
     }.bind(this);
 
+    console.log('PROPS', props);
 
     // use this.props.searchYouTube to set the state
-    // props.getData(options, callback);
+    this.props.searchYouTube(options, callback);
   }
 
   clickHandler(arg) {
