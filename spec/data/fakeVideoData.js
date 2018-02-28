@@ -9,6 +9,7 @@ window.fakeVideoData = [{
     description: 'The best cat video on the internet!',
     thumbnails: {
       default: {
+        // url: 'https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3066/assets/images/logo/hack-reactor-logo.png'
         url: 'http://www.fndvisions.org/img/cutecat.jpg',
       }
     }
@@ -37,6 +38,7 @@ window.fakeVideoData = [{
     description: 'Watch the ribbon cutting of the first coding bootcamp in space',
     thumbnails: {
       default: {
+        // url: 'https://static1.squarespace.com/static/ta/522a22cbe4b04681b0bff826/3066/assets/images/logo/hack-reactor-logo.png'
         url: 'https://d3c5s1hmka2e2b.cloudfront.net/uploads/topic/image/14/hack_reactor.png',
       }
     }

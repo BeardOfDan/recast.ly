@@ -1,21 +1,12 @@
+var VideoList = (props) => {
+  const result = [];
 
-class VideoList extends React.Component {
-  constructor(props) {
-    super(props);
+  for (let i = 0; i < props.videos.length; i++) {
+    result[i] = <VideoListEntry video={props.videos[i]} key={i} clickHandler={props.clickHandler} />; //assign key prop to prevent warning of having the same key
   }
 
-  render() {
-    return (
-      <div className="video-list">
-        <VideoListEntry video={this.props.videos[0]} />
-        <VideoListEntry video={this.props.videos[1]} />
-        <VideoListEntry video={this.props.videos[2]} />
-        <VideoListEntry video={this.props.videos[3]} />
-        <VideoListEntry video={this.props.videos[4]} />
-      </div>
-    );
-  }
-}
+  return (<div className="video-list">{result}</div>);
+};
 
 // PropTypes tell other developers what `props` a component expects
 // Warnings will be shown in the console when the defined rules are violated
